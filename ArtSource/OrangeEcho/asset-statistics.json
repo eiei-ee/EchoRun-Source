@@ -1,0 +1,18 @@
+{
+  "outfit_vertices": 2376,
+  "outfit_triangles": 4228,
+  "outfit_meshes": 1,
+  "bone_count": 112,
+  "OrangeRoadStraight": {
+    "vertices": 1104,
+    "renderers": 5
+  },
+  "OrangeRoadRight": {
+    "vertices": 996,
+    "renderers": 5
+  },
+  "OrangeRoadLeft": {
+    "vertices": 996,
+    "renderers": 5
+  }
+}

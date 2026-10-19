@@ -1,0 +1,60 @@
+{
+  "asset": "CityCornerDistrictTower",
+  "fbx": "Assets/Art/StackedCity/Models/CityCornerDistrictTower.fbx",
+  "mesh_renderers": 5,
+  "triangles": 7464,
+  "materials": [
+    "SC_Concrete",
+    "SC_Foliage",
+    "SC_Glass",
+    "SC_Metal",
+    "SC_Orange"
+  ],
+  "blender_min_xyz_m": [
+    -9.0,
+    -11.0,
+    0.0
+  ],
+  "blender_max_xyz_m": [
+    9.0,
+    11.0,
+    83.6
+  ],
+  "unity_size_xyz_m": [
+    18.0,
+    83.6,
+    22.0
+  ],
+  "bytes": 143644,
+  "unity_min_xyz_m": [
+    -9.0,
+    0.0,
+    -11.0
+  ],
+  "unity_max_xyz_m": [
+    9.0,
+    83.6,
+    11.0
+  ],
+  "outward_normals_verified": true,
+  "competing_coplanar_material_pairs": 0,
+  "material_limit": 5,
+  "triangle_limit": 15000,
+  "source_variant_of": "Assets/Art/StackedCity/Models/CityCornerTower.fbx",
+  "unchanged_component_count": 302,
+  "unchanged_components_geometry_sha256_verified": true,
+  "podium_sign_bay": {
+    "blank_front_back_x_m": [
+      -1.8,
+      1.8
+    ],
+    "front_back_wall_blender_y_m": [
+      -10.7,
+      10.7
+    ],
+    "solid_podium_height_m": 20,
+    "front_back_glazing_segments": 16,
+    "front_back_piers": 12,
+    "podium_closed_manifold": true
+  }
+}

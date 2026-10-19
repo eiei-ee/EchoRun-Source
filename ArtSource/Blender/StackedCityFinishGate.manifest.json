@@ -1,0 +1,100 @@
+{
+  "asset": "CityFinishGate",
+  "fbx": "Assets/Art/StackedCity/Models/CityFinishGate.fbx",
+  "mesh_renderers": 5,
+  "triangles": 7383,
+  "materials": [
+    "SC_Concrete",
+    "SC_Cyan",
+    "SC_Metal",
+    "SC_Orange",
+    "SC_White"
+  ],
+  "blender_min_xyz_m": [
+    -5.65,
+    -0.54,
+    0.0
+  ],
+  "blender_max_xyz_m": [
+    5.65,
+    0.54,
+    5.78
+  ],
+  "unity_size_xyz_m": [
+    11.3,
+    5.78,
+    1.08
+  ],
+  "bytes": 149788,
+  "unity_min_xyz_m": [
+    -5.65,
+    0.0,
+    -0.54
+  ],
+  "unity_max_xyz_m": [
+    5.65,
+    5.78,
+    0.54
+  ],
+  "orientation": "Unity +Y up; front Chinese lettering faces Unity -Z; runner approaches along +Z",
+  "pivot": "Ground centre at Unity (0,0,0)",
+  "clear_aperture_width_m": 9.3,
+  "clear_aperture_height_m": 4.3,
+  "column_centres_x_m": [
+    -5.08,
+    5.08
+  ],
+  "outward_normals_verified": true,
+  "lettering_front_and_back_normals_verified": true,
+  "competing_coplanar_material_pairs": 0,
+  "lettering_clearance_from_lintel_face_m": 0.027,
+  "signal_mesh": "CityFinishGate_SC_Cyan",
+  "colliders": 0,
+  "animations": 0,
+  "runtime_fonts": 0,
+  "lettering": [
+    {
+      "asset": "CityFinishGate",
+      "text": "A1",
+      "font": "EchoRun Sans SC Regular",
+      "height_m": 0.17
+    },
+    {
+      "asset": "CityFinishGate",
+      "text": "A1",
+      "font": "EchoRun Sans SC Regular",
+      "height_m": 0.17
+    },
+    {
+      "asset": "CityFinishGate",
+      "text": "A1",
+      "font": "EchoRun Sans SC Regular",
+      "height_m": 0.17
+    },
+    {
+      "asset": "CityFinishGate",
+      "text": "A1",
+      "font": "EchoRun Sans SC Regular",
+      "height_m": 0.17
+    },
+    {
+      "asset": "CityFinishGate",
+      "text": "终点",
+      "font": "SimHei Regular",
+      "height_m": 0.69
+    },
+    {
+      "asset": "CityFinishGate",
+      "text": "F I N I S H",
+      "font": "EchoRun Sans SC Regular",
+      "height_m": 0.175
+    },
+    {
+      "asset": "CityFinishGate",
+      "text": "FINISH",
+      "font": "EchoRun Sans SC Regular",
+      "height_m": 0.48
+    }
+  ],
+  "provenance": "Original locally authored 3D model. Chinese: installed SimHei outlines. Latin: existing EchoRun Sans SC (SIL OFL 1.1) outlines. No font file or external texture embedded."
+}

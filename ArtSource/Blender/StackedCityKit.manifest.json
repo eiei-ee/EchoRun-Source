@@ -1,0 +1,140 @@
+[
+  {
+    "asset": "SkyTrainCar",
+    "fbx": "Assets/Art/StackedCity/Models/SkyTrainCar.fbx",
+    "mesh_renderers": 5,
+    "triangles": 13824,
+    "materials": [
+      "SC_Concrete",
+      "SC_Cyan",
+      "SC_Glass",
+      "SC_Metal",
+      "SC_Warm"
+    ],
+    "blender_min_xyz_m": [
+      -1.398,
+      -7.0225,
+      0.0
+    ],
+    "blender_max_xyz_m": [
+      1.398,
+      7.0,
+      2.9325
+    ],
+    "unity_size_xyz_m": [
+      2.796,
+      2.9325,
+      14.0225
+    ],
+    "bytes": 249724
+  },
+  {
+    "asset": "SkyPlanter",
+    "fbx": "Assets/Art/StackedCity/Models/SkyPlanter.fbx",
+    "mesh_renderers": 4,
+    "triangles": 3568,
+    "materials": [
+      "SC_Concrete",
+      "SC_Foliage",
+      "SC_Metal",
+      "SC_Warm"
+    ],
+    "blender_min_xyz_m": [
+      -2.5,
+      -1.012,
+      0.0
+    ],
+    "blender_max_xyz_m": [
+      2.5,
+      1.012,
+      2.9266
+    ],
+    "unity_size_xyz_m": [
+      5.0,
+      2.9266,
+      2.024
+    ],
+    "bytes": 118220
+  },
+  {
+    "asset": "SkyViaduct",
+    "fbx": "Assets/Art/StackedCity/Models/SkyViaduct.fbx",
+    "mesh_renderers": 3,
+    "triangles": 12164,
+    "materials": [
+      "SC_Concrete",
+      "SC_Metal",
+      "SC_Warm"
+    ],
+    "blender_min_xyz_m": [
+      -3.535,
+      -12.0,
+      -2.0
+    ],
+    "blender_max_xyz_m": [
+      3.535,
+      12.0,
+      0.832
+    ],
+    "unity_size_xyz_m": [
+      7.07,
+      2.832,
+      24.0
+    ],
+    "bytes": 209884
+  },
+  {
+    "asset": "SkyTerrace",
+    "fbx": "Assets/Art/StackedCity/Models/SkyTerrace.fbx",
+    "mesh_renderers": 4,
+    "triangles": 12520,
+    "materials": [
+      "SC_Concrete",
+      "SC_Glass",
+      "SC_Metal",
+      "SC_Warm"
+    ],
+    "blender_min_xyz_m": [
+      -9.0,
+      -6.0,
+      -1.0
+    ],
+    "blender_max_xyz_m": [
+      9.0,
+      6.0,
+      1.232
+    ],
+    "unity_size_xyz_m": [
+      18.0,
+      2.232,
+      12.0
+    ],
+    "bytes": 231852
+  },
+  {
+    "asset": "SkyStair",
+    "fbx": "Assets/Art/StackedCity/Models/SkyStair.fbx",
+    "mesh_renderers": 2,
+    "triangles": 11032,
+    "materials": [
+      "SC_Concrete",
+      "SC_Metal"
+    ],
+    "blender_min_xyz_m": [
+      -1.94,
+      -4.5007,
+      -0.52
+    ],
+    "blender_max_xyz_m": [
+      1.9,
+      4.5,
+      7.1962
+    ],
+    "unity_size_xyz_m": [
+      3.84,
+      7.7162,
+      9.0007
+    ],
+    "bytes": 202428
+  }
+]

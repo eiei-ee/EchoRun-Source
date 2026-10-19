@@ -1,0 +1,47 @@
+name: iOS Xcode Project
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-ios:
+    runs-on: macos-14
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Patch Tuanjie project for Unity CI
+        run: |
+          cd "${{ github.workspace }}"
+          sed -i '' '/cn.tuanjie.codely.bridge/d' Packages/manifest.json
+          sed -i '' '/com.unity.modules.infinity/d' Packages/manifest.json
+          cp Packages/packages-lock.unity.json Packages/packages-lock.json
+          sed -i '' 's/2022.3.62t8/2022.3.62f1/g' ProjectSettings/ProjectVersion.txt
+          find Assets ProjectSettings -type f \( -name '*.scene' -o -name '*.prefab' -o -name '*.asset' -o -name '*.mat' \) \
+            -exec sed -i '' 's/tag:yousandi.cn,2023:/tag:unity3d.com,2011:/g' {} +
+
+      - name: Build iOS Xcode project
+        uses: game-ci/unity-builder@1d4ee0697f193f54668e98961d79907911f4b4f2 # v4
+        with:
+          targetPlatform: iOS
+          buildMethod: BuildConfig.BuildIOS
+          unityVersion: 2022.3.62f1
+
+      - name: Upload Xcode project
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: TempleRun-iOS-Xcode
+          path: Builds/iOS
+          if-no-files-found: error

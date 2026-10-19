@@ -1,0 +1,137 @@
+[
+  {
+    "asset": "FacadeBay",
+    "fbx": "Assets/Art/StackedCity/Models/FacadeBay.fbx",
+    "mesh_renderers": 4,
+    "triangles": 864,
+    "materials": [
+      "SC_Concrete",
+      "SC_Glass",
+      "SC_Metal",
+      "SC_Warm"
+    ],
+    "blender_min_xyz_m": [
+      -1.41,
+      -0.26,
+      -1.04
+    ],
+    "blender_max_xyz_m": [
+      1.41,
+      0.0,
+      1.04
+    ],
+    "unity_size_xyz_m": [
+      2.82,
+      2.08,
+      0.26
+    ],
+    "bytes": 42524
+  },
+  {
+    "asset": "FacadeCornice",
+    "fbx": "Assets/Art/StackedCity/Models/FacadeCornice.fbx",
+    "mesh_renderers": 2,
+    "triangles": 216,
+    "materials": [
+      "SC_Concrete",
+      "SC_Metal"
+    ],
+    "blender_min_xyz_m": [
+      -0.5,
+      -0.29,
+      -0.12
+    ],
+    "blender_max_xyz_m": [
+      0.5,
+      0.0,
+      0.09
+    ],
+    "unity_size_xyz_m": [
+      1.0,
+      0.21,
+      0.29
+    ],
+    "bytes": 23836
+  },
+  {
+    "asset": "Wayfinding07",
+    "fbx": "Assets/Art/StackedCity/Models/Wayfinding07.fbx",
+    "mesh_renderers": 3,
+    "triangles": 1828,
+    "materials": [
+      "SC_Concrete",
+      "SC_Metal",
+      "SC_Orange"
+    ],
+    "blender_min_xyz_m": [
+      -1.375,
+      -0.085,
+      -2.575
+    ],
+    "blender_max_xyz_m": [
+      1.375,
+      -0.001,
+      2.575
+    ],
+    "unity_size_xyz_m": [
+      2.75,
+      5.15,
+      0.084
+    ],
+    "bytes": 62524
+  },
+  {
+    "asset": "Wayfinding12",
+    "fbx": "Assets/Art/StackedCity/Models/Wayfinding12.fbx",
+    "mesh_renderers": 3,
+    "triangles": 1824,
+    "materials": [
+      "SC_Concrete",
+      "SC_Metal",
+      "SC_Orange"
+    ],
+    "blender_min_xyz_m": [
+      -1.375,
+      -0.085,
+      -2.575
+    ],
+    "blender_max_xyz_m": [
+      1.375,
+      -0.001,
+      2.575
+    ],
+    "unity_size_xyz_m": [
+      2.75,
+      5.15,
+      0.084
+    ],
+    "bytes": 62524
+  },
+  {
+    "asset": "Wayfinding21",
+    "fbx": "Assets/Art/StackedCity/Models/Wayfinding21.fbx",
+    "mesh_renderers": 3,
+    "triangles": 1824,
+    "materials": [
+      "SC_Concrete",
+      "SC_Metal",
+      "SC_Orange"
+    ],
+    "blender_min_xyz_m": [
+      -1.375,
+      -0.085,
+      -2.575
+    ],
+    "blender_max_xyz_m": [
+      1.375,
+      -0.001,
+      2.575
+    ],
+    "unity_size_xyz_m": [
+      2.75,
+      5.15,
+      0.084
+    ],
+    "bytes": 62620
+  }
+]

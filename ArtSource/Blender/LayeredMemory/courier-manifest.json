@@ -1,0 +1,42 @@
+{
+  "vertices": 5671,
+  "triangles": 10887,
+  "bones": 112,
+  "materials": [
+    "OE_Jacket_Accent",
+    "OE_RelaySignal",
+    "OE_Navy_Fabric",
+    "OE_Rubber",
+    "OE_Ivory_Fabric",
+    "OE_RelayMetal"
+  ],
+  "source_parts": 38,
+  "bind_skeleton": "ExoGray_TPose.fbx",
+  "continuous_garment_surfaces": [
+    {
+      "name": "MC_TailoredShell",
+      "connected_components": 1,
+      "non_manifold_edges": 0,
+      "triangles": 2250
+    },
+    {
+      "name": "MC_Trousers",
+      "connected_components": 1,
+      "non_manifold_edges": 0,
+      "triangles": 2350
+    }
+  ],
+  "measurement_method": "mesh edge intersections with exact section planes",
+  "silhouette_metres": {
+    "coat_chest_depth": 0.200862,
+    "coat_waist_width": 0.283639,
+    "upper_sleeve_depth": 0.118115,
+    "upper_sleeve_height": 0.112926,
+    "trouser_thigh_depth": 0.176532,
+    "trouser_calf_width": 0.108603,
+    "archive_body_depth": 0.047711,
+    "shoe_max_width": 0.096252,
+    "sole_min_height": 0.004839
+  },
+  "original_rig_unchanged": true
+}

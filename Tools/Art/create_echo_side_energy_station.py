@@ -1,0 +1,321 @@
+import math
+from pathlib import Path
+
+import bpy
+from mathutils import Vector
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+FBX_PATH = PROJECT_ROOT / "Assets" / "Art" / "Environment" / \
+    "EchoSideEnergyStation" / "Models" / "EchoSideEnergyStation.fbx"
+BLEND_PATH = PROJECT_ROOT / "ArtSource" / "Blender" / \
+    "EchoSideEnergyStation.blend"
+PREVIEW_PATH = PROJECT_ROOT / "ArtSource" / "Previews" / \
+    "EchoSideEnergyStation_preview.png"
+
+
+def reset_scene():
+    bpy.ops.object.select_all(action="SELECT")
+    bpy.ops.object.delete(use_global=False)
+    for datablocks in (bpy.data.meshes, bpy.data.curves, bpy.data.materials,
+                       bpy.data.cameras, bpy.data.lights):
+        for datablock in list(datablocks):
+            if datablock.users == 0:
+                datablocks.remove(datablock)
+
+
+def make_material(name, base_color, metallic, roughness,
+                  emission_color=None, emission_strength=0.0):
+    material = bpy.data.materials.new(name)
+    material.use_nodes = True
+    material.diffuse_color = (*base_color, 1.0)
+    material.metallic = metallic
+    material.roughness = roughness
+    principled = material.node_tree.nodes.get("Principled BSDF")
+    principled.inputs["Base Color"].default_value = (*base_color, 1.0)
+    principled.inputs["Metallic"].default_value = metallic
+    principled.inputs["Roughness"].default_value = roughness
+    if emission_color is not None:
+        emission_input = principled.inputs.get("Emission Color") or \
+            principled.inputs.get("Emission")
+        if emission_input is not None:
+            emission_input.default_value = (*emission_color, 1.0)
+        strength_input = principled.inputs.get("Emission Strength")
+        if strength_input is not None:
+            strength_input.default_value = emission_strength
+    return material
+
+
+def finish_object(obj, parent, material, bevel=0.08):
+    obj.parent = parent
+    obj.data.materials.append(material)
+    bpy.context.view_layer.objects.active = obj
+    obj.select_set(True)
+    # Bake every child transform into mesh space before material batching.
+    # Keeping all batch origins at the asset root avoids transform drift when
+    # Blender joins rotated pipes, fins and body panels.
+    bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
+    if bevel > 0:
+        modifier = obj.modifiers.new("EdgeBevel", "BEVEL")
+        modifier.width = bevel
+        modifier.segments = 2
+        bpy.ops.object.modifier_apply(modifier=modifier.name)
+    obj.select_set(False)
+    return obj
+
+
+def add_box(name, location, scale, material, parent, bevel=0.08,
+            rotation=(0.0, 0.0, 0.0)):
+    bpy.ops.mesh.primitive_cube_add(location=location, rotation=rotation)
+    obj = bpy.context.object
+    obj.name = name
+    obj.scale = (scale[0] * 0.5, scale[1] * 0.5, scale[2] * 0.5)
+    return finish_object(obj, parent, material, bevel)
+
+
+def add_cylinder(name, location, radius, depth, material, parent,
+                 rotation=(0.0, 0.0, 0.0), vertices=16, bevel=0.05):
+    bpy.ops.mesh.primitive_cylinder_add(
+        vertices=vertices, radius=radius, depth=depth,
+        location=location, rotation=rotation)
+    obj = bpy.context.object
+    obj.name = name
+    return finish_object(obj, parent, material, bevel)
+
+
+def add_wedge(name, location, scale, material, parent, mirror=False):
+    sx, sy, sz = (value * 0.5 for value in scale)
+    high_x = -sx if mirror else sx
+    low_x = sx if mirror else -sx
+    vertices = [
+        (-sx, -sy, -sz), (sx, -sy, -sz),
+        (-sx, sy, -sz), (sx, sy, -sz),
+        (low_x, -sy, sz * 0.35), (high_x, -sy, sz),
+        (low_x, sy, sz * 0.35), (high_x, sy, sz),
+    ]
+    faces = [
+        (0, 1, 3, 2), (0, 4, 5, 1), (2, 3, 7, 6),
+        (0, 2, 6, 4), (1, 5, 7, 3), (4, 6, 7, 5),
+    ]
+    mesh = bpy.data.meshes.new(name + "Mesh")
+    mesh.from_pydata(vertices, [], faces)
+    mesh.update()
+    obj = bpy.data.objects.new(name, mesh)
+    bpy.context.collection.objects.link(obj)
+    obj.location = location
+    return finish_object(obj, parent, material, 0.06)
+
+
+def add_pipe(name, start, end, radius, material, parent):
+    start_v = Vector(start)
+    end_v = Vector(end)
+    direction = end_v - start_v
+    midpoint = (start_v + end_v) * 0.5
+    bpy.ops.mesh.primitive_cylinder_add(
+        vertices=12, radius=radius, depth=direction.length,
+        location=midpoint)
+    obj = bpy.context.object
+    obj.name = name
+    obj.rotation_mode = "QUATERNION"
+    obj.rotation_quaternion = direction.to_track_quat("Z", "Y")
+    obj.rotation_mode = "XYZ"
+    return finish_object(obj, parent, material, 0.035)
+
+
+def build_station():
+    structure = make_material(
+        "EchoStructure", (0.10, 0.16, 0.24), 0.55, 0.28)
+    depth = make_material(
+        "EchoDepth", (0.025, 0.045, 0.075), 0.35, 0.34)
+    cyan = make_material(
+        "EchoCyan", (0.03, 0.55, 0.82), 0.25, 0.24,
+        (0.02, 0.70, 1.00), 5.0)
+    gold = make_material(
+        "EchoGold", (0.74, 0.34, 0.055), 0.45, 0.30,
+        (1.00, 0.22, 0.015), 3.0)
+
+    root = bpy.data.objects.new("EchoSideEnergyStation", None)
+    root.empty_display_type = "CUBE"
+    root.empty_display_size = 0.4
+    root["asset_role"] = "trackside_environment_module"
+    root["dimensions_m"] = "4.5 x 3.5 x 5.5"
+    root["pivot"] = "bottom_center"
+    bpy.context.collection.objects.link(root)
+
+    add_box("Base_Plinth", (0, 0, 0.18), (4.5, 3.4, 0.36),
+            depth, root, 0.10)
+    add_box("Base_Upper", (0, -0.05, 0.48), (4.1, 3.1, 0.28),
+            structure, root, 0.08)
+    add_box("Core_Lower", (-0.20, 0.10, 1.85), (3.65, 2.65, 2.65),
+            structure, root, 0.16)
+    add_box("Core_Inset", (-0.20, -1.27, 1.85), (3.15, 0.16, 2.18),
+            depth, root, 0.035)
+    add_wedge("Upper_Step", (0.33, 0.10, 3.67), (3.05, 2.35, 1.45),
+              structure, root)
+    add_box("Crown", (0.60, 0.15, 4.62), (2.15, 1.95, 0.72),
+            depth, root, 0.12)
+    add_box("Crown_Cap", (0.60, 0.15, 5.05), (2.48, 2.18, 0.18),
+            structure, root, 0.06)
+
+    add_wedge("Buttress_Left", (-2.00, 0.12, 1.68), (0.48, 2.80, 2.70),
+              depth, root, mirror=False)
+    add_wedge("Buttress_Right", (1.82, 0.12, 1.45), (0.44, 2.75, 2.25),
+              depth, root, mirror=True)
+
+    add_box("Front_EnergySpine", (-0.62, -1.39, 2.25),
+            (0.16, 0.10, 2.68), cyan, root, 0.025)
+    add_box("Front_EnergyBar", (0.52, -1.40, 3.30),
+            (1.92, 0.10, 0.14), cyan, root, 0.025)
+    add_box("Front_Status", (1.28, -1.41, 1.48),
+            (0.20, 0.10, 0.56), gold, root, 0.025)
+
+    for index in range(5):
+        add_box(
+            f"Front_Vent_{index + 1:02d}",
+            (0.58, -1.40, 1.74 + index * 0.22),
+            (1.25, 0.08, 0.085), depth, root, 0.018)
+
+    add_cylinder("Side_Reactor_Left", (-1.56, 0.30, 3.02), 0.34, 2.05,
+                 depth, root, vertices=16, bevel=0.05)
+    add_cylinder("Side_Reactor_Right", (1.56, 0.30, 2.82), 0.28, 1.65,
+                 depth, root, vertices=16, bevel=0.05)
+    add_pipe("Pipe_Left", (-1.56, 0.30, 2.10),
+             (-1.56, -1.18, 1.30), 0.105, structure, root)
+    add_pipe("Pipe_Right", (1.56, 0.30, 2.08),
+             (1.22, -1.20, 1.08), 0.09, structure, root)
+
+    add_cylinder("Crown_Antenna", (0.88, 0.10, 5.30), 0.055, 0.40,
+                 cyan, root, vertices=12, bevel=0.018)
+    add_box("Roof_Fin", (-0.18, 0.38, 5.28), (0.16, 1.10, 0.42),
+            depth, root, 0.035, rotation=(0, math.radians(-13), 0))
+
+    return root
+
+
+def merge_by_material(root):
+    groups = {}
+    for obj in root.children_recursive:
+        if obj.type != "MESH" or not obj.data.materials:
+            continue
+        material = obj.data.materials[0]
+        groups.setdefault(material.name, []).append(obj)
+
+    for material_name, objects in groups.items():
+        if len(objects) == 1:
+            objects[0].name = material_name + "_Geometry"
+            continue
+        bpy.ops.object.select_all(action="DESELECT")
+        for obj in objects:
+            obj.select_set(True)
+        bpy.context.view_layer.objects.active = objects[0]
+        bpy.ops.object.join()
+        merged = bpy.context.object
+        merged.name = material_name + "_Geometry"
+        merged.parent = root
+        merged.select_set(False)
+
+
+def select_hierarchy(root):
+    bpy.ops.object.select_all(action="DESELECT")
+    root.select_set(True)
+    for child in root.children_recursive:
+        child.select_set(True)
+    bpy.context.view_layer.objects.active = root
+
+
+def export_fbx(root):
+    FBX_PATH.parent.mkdir(parents=True, exist_ok=True)
+    select_hierarchy(root)
+    bpy.ops.export_scene.fbx(
+        filepath=str(FBX_PATH), use_selection=True, object_types={"EMPTY", "MESH"},
+        apply_scale_options="FBX_SCALE_UNITS", apply_unit_scale=True,
+        bake_space_transform=False, axis_forward="-Z", axis_up="Y",
+        add_leaf_bones=False, mesh_smooth_type="FACE", use_mesh_modifiers=True,
+        path_mode="AUTO", embed_textures=False)
+
+
+def aim_at(obj, target):
+    direction = Vector(target) - obj.location
+    obj.rotation_euler = direction.to_track_quat("-Z", "Y").to_euler()
+
+
+def create_preview(root):
+    bpy.ops.mesh.primitive_plane_add(size=34, location=(0, 0, -0.015))
+    ground = bpy.context.object
+    ground.name = "PreviewGround"
+    ground.data.materials.append(make_material(
+        "PreviewGroundMaterial", (0.008, 0.015, 0.026), 0.05, 0.62))
+
+    bpy.ops.object.camera_add(location=(8.8, -10.8, 7.0))
+    camera = bpy.context.object
+    camera.name = "PreviewCamera"
+    camera.data.lens = 58
+    aim_at(camera, (0, 0, 2.35))
+    bpy.context.scene.camera = camera
+
+    bpy.ops.object.light_add(type="AREA", location=(-4.5, -5.0, 8.5))
+    key = bpy.context.object
+    key.name = "PreviewKey"
+    key.data.energy = 1100
+    key.data.shape = "DISK"
+    key.data.size = 5.0
+    key.data.color = (0.70, 0.86, 1.0)
+    aim_at(key, (0, 0, 2.0))
+
+    bpy.ops.object.light_add(type="AREA", location=(4.5, -1.0, 4.5))
+    rim = bpy.context.object
+    rim.name = "PreviewRim"
+    rim.data.energy = 850
+    rim.data.size = 3.0
+    rim.data.color = (1.0, 0.32, 0.10)
+    aim_at(rim, (0, 0, 2.6))
+
+    world = bpy.context.scene.world
+    world.color = (0.005, 0.008, 0.015)
+    world.use_nodes = True
+    world.node_tree.nodes["Background"].inputs["Color"].default_value = \
+        (0.005, 0.009, 0.018, 1.0)
+    world.node_tree.nodes["Background"].inputs["Strength"].default_value = 0.22
+
+    scene = bpy.context.scene
+    scene.render.engine = "BLENDER_EEVEE"
+    scene.render.resolution_x = 900
+    scene.render.resolution_y = 900
+    scene.render.resolution_percentage = 100
+    scene.render.image_settings.file_format = "PNG"
+    scene.render.filepath = str(PREVIEW_PATH)
+    scene.render.film_transparent = False
+    scene.render.image_settings.color_mode = "RGBA"
+    scene.view_settings.look = "AgX - Medium High Contrast"
+    PREVIEW_PATH.parent.mkdir(parents=True, exist_ok=True)
+    bpy.ops.wm.save_as_mainfile(filepath=str(BLEND_PATH))
+    bpy.ops.render.render(write_still=True)
+
+
+def report(root):
+    mesh_objects = [obj for obj in root.children_recursive if obj.type == "MESH"]
+    triangles = 0
+    for obj in mesh_objects:
+        obj.data.calc_loop_triangles()
+        triangles += len(obj.data.loop_triangles)
+    print(f"ECHO_ASSET_FBX={FBX_PATH}")
+    print(f"ECHO_ASSET_BLEND={BLEND_PATH}")
+    print(f"ECHO_ASSET_PREVIEW={PREVIEW_PATH}")
+    print(f"ECHO_ASSET_MESH_OBJECTS={len(mesh_objects)}")
+    print(f"ECHO_ASSET_TRIANGLES={triangles}")
+    print("ECHO_ASSET_BOUNDS_METERS=4.5x3.5x5.5")
+
+
+def main():
+    reset_scene()
+    bpy.context.scene.unit_settings.system = "METRIC"
+    bpy.context.scene.unit_settings.scale_length = 1.0
+    root = build_station()
+    merge_by_material(root)
+    export_fbx(root)
+    create_preview(root)
+    report(root)
+
+
+if __name__ == "__main__":
+    main()

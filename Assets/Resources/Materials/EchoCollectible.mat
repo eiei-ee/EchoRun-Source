@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: EchoCollectible
+  m_Shader: {fileID: 4800000, guid: 1399b53c6b68e9142aadfbe904fb066c, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AccentEmissionStrength: 0.7
+    - _ContractMarker: 0
+    - _EmissionStrength: 2.05
+    - _FrameEmissionStrength: 0.72
+    - _ScanPeriod: 1.5
+    m_Colors:
+    - _AccentColor: {r: 0.12156863, g: 0.90588236, b: 0.90588236, a: 1}
+    - _ContractColor: {r: 1, g: 0.34, b: 0.3, a: 1}
+    - _CoreColor: {r: 1, g: 0.69803923, b: 0.2901961, a: 1}
+    - _CoreEdgeColor: {r: 1, g: 0.94509804, b: 0.8392157, a: 1}
+    - _FrameColor: {r: 0.8509804, g: 0.54509807, b: 0.19607843, a: 1}
+    - _FrameHighlight: {r: 1, g: 0.91764706, b: 0.7607843, a: 1}
+    - _RingColor: {r: 0.94, g: 0.68, b: 0.24, a: 1}
+  m_BuildTextureStacks: []

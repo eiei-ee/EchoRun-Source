@@ -1,0 +1,86 @@
+[
+  {
+    "asset": "CityDeepBase",
+    "fbx": "Assets/Art/StackedCity/Models/CityDeepBase.fbx",
+    "mesh_renderers": 3,
+    "triangles": 4152,
+    "materials": [
+      "SC_Concrete",
+      "SC_Glass",
+      "SC_Metal"
+    ],
+    "blender_min_xyz_m": [
+      -10.0,
+      -10.0,
+      -96.0
+    ],
+    "blender_max_xyz_m": [
+      10.0,
+      10.0,
+      0.0
+    ],
+    "unity_size_xyz_m": [
+      20.0,
+      96.0,
+      20.0
+    ],
+    "bytes": 81308,
+    "unity_min_xyz_m": [
+      -10.0,
+      -96.0,
+      -10.0
+    ],
+    "unity_max_xyz_m": [
+      10.0,
+      0.0,
+      10.0
+    ],
+    "outward_normals_verified": true,
+    "competing_coplanar_material_pairs": 0,
+    "material_limit": 5,
+    "triangle_limit": 7000
+  },
+  {
+    "asset": "CityCornerTower",
+    "fbx": "Assets/Art/StackedCity/Models/CityCornerTower.fbx",
+    "mesh_renderers": 5,
+    "triangles": 7392,
+    "materials": [
+      "SC_Concrete",
+      "SC_Foliage",
+      "SC_Glass",
+      "SC_Metal",
+      "SC_Orange"
+    ],
+    "blender_min_xyz_m": [
+      -9.0,
+      -11.0,
+      0.0
+    ],
+    "blender_max_xyz_m": [
+      9.0,
+      11.0,
+      83.6
+    ],
+    "unity_size_xyz_m": [
+      18.0,
+      83.6,
+      22.0
+    ],
+    "bytes": 142828,
+    "unity_min_xyz_m": [
+      -9.0,
+      0.0,
+      -11.0
+    ],
+    "unity_max_xyz_m": [
+      9.0,
+      83.6,
+      11.0
+    ],
+    "outward_normals_verified": true,
+    "competing_coplanar_material_pairs": 0,
+    "material_limit": 5,
+    "triangle_limit": 15000
+  }
+]

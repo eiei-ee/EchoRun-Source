@@ -1,0 +1,32 @@
+{
+  "gameplay": {
+    "startSpeed": 10.0,
+    "maxSpeed": 24.0,
+    "speedIncreaseRate": 0.12,
+    "coinScore": 10,
+    "magnetRadius": 7.0,
+    "calibrationCourseDistance": 450.0,
+    "challengeCourseDistance": 700.0,
+    "calibrationDuration": 75.0,
+    "challengeDuration": 190.0
+  },
+  "track": {
+    "obstacleChance": 0.7,
+    "coinChance": 0.6,
+    "turnChance": 0.24
+  },
+  "ai": {
+    "shadowLearningRate": 0.08,
+    "minimumTrainingSamples": 24,
+    "minimumActiveSamples": 6,
+    "minimumJumpSamples": 2,
+    "minimumSlideSamples": 2,
+    "directorExploration": 0.35
+  },
+  "powerUps": [
+    { "id": "shield", "displayName": "相位护盾", "description": "抵消一次碰撞", "cost": 60, "duration": 0.0, "value": 1.0 },
+    { "id": "magnet", "displayName": "磁轨吸附", "description": "20 秒自动吸取附近金币", "cost": 45, "duration": 20.0, "value": 1.0 },
+    { "id": "scoreBoost", "displayName": "双倍协议", "description": "25 秒积分翻倍", "cost": 75, "duration": 25.0, "value": 2.0 },
+    { "id": "turboStart", "displayName": "涡轮起步", "description": "以更高速度起跑", "cost": 50, "duration": 12.0, "value": 7.0 }
+  ]
+}

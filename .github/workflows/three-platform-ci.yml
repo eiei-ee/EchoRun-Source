@@ -1,0 +1,112 @@
+name: Three-platform Tuanjie CI
+
+on:
+  push:
+    branches: [master, codex/single-contract-prototype]
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  TUANJIE_EDITOR: D:\unity\tuanjie\2022.3.62t8\Editor\Tuanjie.exe
+
+permissions:
+  contents: read
+
+# One trusted self-hosted editor session at a time, including different branches.
+concurrency:
+  group: tuanjie-ci
+  cancel-in-progress: false
+
+jobs:
+  tests:
+    name: ${{ matrix.testMode }} tests
+    runs-on: [self-hosted, Windows, X64, tuanjie]
+    timeout-minutes: 55
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        testMode: [EditMode, PlayMode]
+    defaults:
+      run:
+        shell: powershell
+        working-directory: ci-project
+    steps:
+      - name: Checkout disposable CI project
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          clean: true
+          # Leave the previous root checkout/private assets untouched during migration.
+          path: ci-project
+
+      - name: Restore licensed motion and rebuild current bindings
+        run: ./Tools/CI/Invoke-TuanjieCI.ps1 -Mode Prepare -Workspace (Get-Location).Path
+
+      - name: Run ${{ matrix.testMode }} tests
+        run: ./Tools/CI/Invoke-TuanjieCI.ps1 -Mode '${{ matrix.testMode }}' -Workspace (Get-Location).Path
+
+      - name: Prepare public test logs and XML
+        if: always()
+        run: ./Tools/CI/Export-PublicArtifacts.ps1 -Workspace (Get-Location).Path
+
+      - name: Upload test logs and XML only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: test-results-${{ matrix.testMode }}
+          path: ci-project/artifacts-public
+          if-no-files-found: warn
+
+  build:
+    name: Build ${{ matrix.name }}
+    needs: tests
+    runs-on: [self-hosted, Windows, X64, tuanjie]
+    timeout-minutes: 110
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - name: WebGL
+            artifact: Builds/WebGL
+          - name: Windows
+            artifact: Builds/Windows
+          - name: Android
+            artifact: Builds/Android
+    defaults:
+      run:
+        shell: powershell
+        working-directory: ci-project
+    steps:
+      - name: Checkout disposable CI project
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          clean: true
+          path: ci-project
+
+      - name: Restore licensed motion and rebuild current bindings
+        run: ./Tools/CI/Invoke-TuanjieCI.ps1 -Mode Prepare -Workspace (Get-Location).Path
+
+      - name: Build ${{ matrix.name }}
+        run: ./Tools/CI/Invoke-TuanjieCI.ps1 -Mode '${{ matrix.name }}' -Workspace (Get-Location).Path
+
+      - name: Upload ${{ matrix.name }} build
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: EchoRun-${{ matrix.name }}
+          path: ci-project/${{ matrix.artifact }}
+          if-no-files-found: error
+
+      - name: Prepare public build logs
+        if: always()
+        run: ./Tools/CI/Export-PublicArtifacts.ps1 -Workspace (Get-Location).Path
+
+      - name: Upload filtered build logs only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: build-log-${{ matrix.name }}
+          path: ci-project/artifacts-public
+          if-no-files-found: warn

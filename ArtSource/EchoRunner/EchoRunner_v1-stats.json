@@ -1,0 +1,12 @@
+{
+  "model": "Echo Runner v1",
+  "height_m": 2.027,
+  "vertices": 3160,
+  "triangles": 6116,
+  "materials": 1,
+  "deform_bones": 19,
+  "blend": "C:\\Users\\zzz\\Desktop\\归档\\TempleRun\\ArtSource\\EchoRunner\\EchoRunner_v1.blend",
+  "fbx": "C:\\Users\\zzz\\Desktop\\归档\\TempleRun\\Assets\\Models\\EchoRunner\\EchoRunner_v1.fbx",
+  "color_source": "FBX vertex colors (Color, alpha = cyan glow mask)",
+  "preview": "C:\\Users\\zzz\\Desktop\\归档\\TempleRun\\docs\\ConceptArt\\EchoRunner-Blender-v1.png"
+}

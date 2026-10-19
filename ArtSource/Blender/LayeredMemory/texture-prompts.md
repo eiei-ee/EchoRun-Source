@@ -1,0 +1,11 @@
+# 生成材质来源
+
+模式：内置 image_gen；2026-09-24。原图复制入项目，无脚本修图；Unity 只负责常规纹理导入与压缩。
+
+## MineralPlaster.png
+
+Use case: stylized-concept. Production game texture asset ONLY, not a scene or mockup. Create a square 1024x1024 seamless tileable diffuse albedo texture of aged fine mineral lime plaster, subtly worn and hand troweled. This will be multiplied by mineral blue and pomegranate red tint in a mobile 3D game shader. Entire image is pale neutral achromatic gray, soft variation from RGB 165 to 230, no color tint. Small irregular plaster chips reveal finer granular underlying mineral, very faint hairline cracks, subtle dusty patched areas with broad quiet regions. Moderate organic painterly hand-crafted detail at an approximately 4 metre wall surface scale, NOT photoreal concrete noise. Very restrained contrast. Perfect straight-on orthographic flat surface, even diffuse illumination, NO directional light, shadows, highlights, perspective, vignette, borders, tiles, grid, bricks, stones, text, logos, objects, scenery or gradients. Both opposite edges must match seamlessly; detail consistent at every edge. Fill every pixel with the material. This is the final texture to import into Unity, not a preview sheet.
+
+## MineralPaving.png
+
+Production 3D game material albedo only. Square seamless tileable texture, perfectly orthographic top-down, of worn squared mineral stone paving on a narrow elevated city walkway. Neutral muted gray with very slight blue-violet undertone, average RGB 180. Rectangular stones in an understated staggered ashlar pattern, approximately 5 courses of stone across the entire tile; individual stones vary in size, softly worn chipped edges, fine mineral speckle, a few repaired hairline cracks. Thin dark mortar joints, subtle broad value variation. Hand crafted stylized game material, refined and restrained, no noisy photoreal grit. Must tile seamlessly on all four edges with matching staggered pattern. No object, curb, sidewalk, road marking, perspective, text, grass, moss, logos, frame, vignette, cast shadow or directional lighting. Flat diffuse albedo only, enough mid gray contrast to distinguish stones without distracting from characters. The full image is the pavement surface, no preview sphere or room. 1024 square.

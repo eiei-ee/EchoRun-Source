@@ -1,0 +1,64 @@
+[
+  {
+    "asset": "LayeredTerraceQuarter",
+    "fbx": "Assets/Art/LayeredMemory/Models/LayeredTerraceQuarter.fbx",
+    "mesh_renderers": 7,
+    "triangles": 18160,
+    "materials": [
+      "LM_Glass",
+      "LM_Ink",
+      "LM_Leaf",
+      "LM_Mineral",
+      "LM_Pomegranate",
+      "LM_Stone",
+      "LM_Window"
+    ],
+    "blender_min_xyz_m": [
+      -9.3,
+      -9.6,
+      -21.9
+    ],
+    "blender_max_xyz_m": [
+      9.3,
+      8.6,
+      23.46
+    ],
+    "unity_size_xyz_m": [
+      18.6,
+      45.36,
+      18.2
+    ],
+    "bytes": 477804
+  },
+  {
+    "asset": "LayeredGalleryQuarter",
+    "fbx": "Assets/Art/LayeredMemory/Models/LayeredGalleryQuarter.fbx",
+    "mesh_renderers": 7,
+    "triangles": 17448,
+    "materials": [
+      "LM_Glass",
+      "LM_Ink",
+      "LM_Leaf",
+      "LM_Mineral",
+      "LM_Pomegranate",
+      "LM_Stone",
+      "LM_Window"
+    ],
+    "blender_min_xyz_m": [
+      -9.3,
+      -9.6,
+      -21.9
+    ],
+    "blender_max_xyz_m": [
+      9.3,
+      8.6,
+      19.86
+    ],
+    "unity_size_xyz_m": [
+      18.6,
+      41.76,
+      18.2
+    ],
+    "bytes": 461564
+  }
+]

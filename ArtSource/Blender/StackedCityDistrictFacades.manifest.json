@@ -1,0 +1,127 @@
+[
+  {
+    "asset": "FacadeResidential",
+    "fbx": "Assets/Art/StackedCity/Models/FacadeResidential.fbx",
+    "mesh_renderers": 4,
+    "triangles": 224,
+    "materials": [
+      "SC_Glass",
+      "SC_Metal",
+      "SC_Orange",
+      "SC_White"
+    ],
+    "blender_min_xyz_m": [
+      -1.41,
+      -0.3005,
+      -1.01
+    ],
+    "blender_max_xyz_m": [
+      1.41,
+      -0.012,
+      1.04
+    ],
+    "unity_size_xyz_m": [
+      2.82,
+      2.05,
+      0.2885
+    ],
+    "bytes": 29276,
+    "wall_pivot": "Centred at opening; Blender -Y / Unity +Z faces outward",
+    "wall_clearance_m": 0.012,
+    "colliders": 0
+  },
+  {
+    "asset": "FacadeCivic",
+    "fbx": "Assets/Art/StackedCity/Models/FacadeCivic.fbx",
+    "mesh_renderers": 5,
+    "triangles": 148,
+    "materials": [
+      "SC_Concrete",
+      "SC_Glass",
+      "SC_Metal",
+      "SC_Orange",
+      "SC_White"
+    ],
+    "blender_min_xyz_m": [
+      -1.49,
+      -0.29,
+      -1.0125
+    ],
+    "blender_max_xyz_m": [
+      1.49,
+      -0.012,
+      0.99
+    ],
+    "unity_size_xyz_m": [
+      2.98,
+      2.0025,
+      0.278
+    ],
+    "bytes": 32588,
+    "wall_pivot": "Centred at opening; Blender -Y / Unity +Z faces outward",
+    "wall_clearance_m": 0.012,
+    "colliders": 0
+  },
+  {
+    "asset": "FacadeTransit",
+    "fbx": "Assets/Art/StackedCity/Models/FacadeTransit.fbx",
+    "mesh_renderers": 4,
+    "triangles": 160,
+    "materials": [
+      "SC_Glass",
+      "SC_Metal",
+      "SC_Orange",
+      "SC_White"
+    ],
+    "blender_min_xyz_m": [
+      -1.39,
+      -0.3105,
+      -1.04
+    ],
+    "blender_max_xyz_m": [
+      1.39,
+      -0.012,
+      1.04
+    ],
+    "unity_size_xyz_m": [
+      2.78,
+      2.08,
+      0.2985
+    ],
+    "bytes": 29004,
+    "wall_pivot": "Centred at opening; Blender -Y / Unity +Z faces outward",
+    "wall_clearance_m": 0.012,
+    "colliders": 0
+  },
+  {
+    "asset": "FacadeHeritage",
+    "fbx": "Assets/Art/StackedCity/Models/FacadeHeritage.fbx",
+    "mesh_renderers": 4,
+    "triangles": 284,
+    "materials": [
+      "SC_Concrete",
+      "SC_Glass",
+      "SC_Metal",
+      "SC_White"
+    ],
+    "blender_min_xyz_m": [
+      -1.35,
+      -0.316,
+      -1.041
+    ],
+    "blender_max_xyz_m": [
+      1.35,
+      -0.012,
+      1.04
+    ],
+    "unity_size_xyz_m": [
+      2.7,
+      2.081,
+      0.304
+    ],
+    "bytes": 30332,
+    "wall_pivot": "Centred at opening; Blender -Y / Unity +Z faces outward",
+    "wall_clearance_m": 0.012,
+    "colliders": 0
+  }
+]

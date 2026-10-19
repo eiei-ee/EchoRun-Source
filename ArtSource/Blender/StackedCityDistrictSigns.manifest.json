@@ -1,0 +1,1064 @@
+{
+  "orientation": "Unity +Z outward; +Y height; rear mount Z=0",
+  "districts": [
+    {
+      "model": "DistrictSignXixia",
+      "number": "03",
+      "title": "栖霞里",
+      "use": "住宅街区",
+      "subtitle": "住在风里"
+    },
+    {
+      "model": "DistrictSignYunting",
+      "number": "16",
+      "title": "云庭公社",
+      "use": "公共街区",
+      "subtitle": "邻里共用"
+    },
+    {
+      "model": "DistrictSignQinglan",
+      "number": "28",
+      "title": "青岚枢纽",
+      "use": "交通办公",
+      "subtitle": "城市换乘"
+    },
+    {
+      "model": "DistrictSignZhexiang",
+      "number": "09",
+      "title": "折巷老街",
+      "use": "旧街生活",
+      "subtitle": "老街新日常"
+    }
+  ],
+  "notices": [
+    {
+      "model": "CityNoticeNoodle",
+      "title": "晚风面馆",
+      "subtitle": "热汤供应",
+      "category": "街坊小店",
+      "layout": 0
+    },
+    {
+      "model": "CityNoticeBookshop",
+      "title": "云间书屋",
+      "subtitle": "今日有新书",
+      "category": "街坊小店",
+      "layout": 1
+    },
+    {
+      "model": "CityNoticeTailor",
+      "title": "衣物修补",
+      "subtitle": "旧物有新用",
+      "category": "邻里手作",
+      "layout": 2
+    },
+    {
+      "model": "CityNoticePost",
+      "title": "层间邮局",
+      "subtitle": "信会准时到",
+      "category": "邮政服务",
+      "layout": 1
+    },
+    {
+      "model": "CityNoticeGarden",
+      "title": "屋顶菜园",
+      "subtitle": "请留一片绿",
+      "category": "共同照料",
+      "layout": 2
+    },
+    {
+      "model": "CityNoticeNightBus",
+      "title": "夜班车站",
+      "subtitle": "末班也等你",
+      "category": "夜间服务",
+      "layout": 0
+    },
+    {
+      "model": "CityNoticeWind",
+      "title": "晒被之前",
+      "subtitle": "请看风向",
+      "category": "生活提醒",
+      "layout": 2
+    },
+    {
+      "model": "CityNoticeNeighbours",
+      "title": "楼上楼下",
+      "subtitle": "都是邻居",
+      "category": "邻里之间",
+      "layout": 1
+    },
+    {
+      "model": "CityNoticeYesterday",
+      "title": "昨日走过",
+      "subtitle": "今日相逢",
+      "category": "街角留言",
+      "layout": 0
+    },
+    {
+      "model": "CityNoticeCat",
+      "title": "这层有猫",
+      "subtitle": "小声经过",
+      "category": "邻里提醒",
+      "layout": 2
+    },
+    {
+      "model": "CityNoticeBreakfast",
+      "title": "早安蒸铺",
+      "subtitle": "热气刚刚好",
+      "category": "街坊小店",
+      "layout": 1
+    },
+    {
+      "model": "CityNoticeLostAndFound",
+      "title": "失物招领",
+      "subtitle": "也收迷路的伞",
+      "category": "邻里服务",
+      "layout": 0
+    }
+  ],
+  "modules": [
+    {
+      "asset": "DistrictSignXixia",
+      "fbx": "Assets/Art/StackedCity/Models/DistrictSignXixia.fbx",
+      "mesh_renderers": 3,
+      "triangles": 3360,
+      "materials": [
+        "SC_Concrete",
+        "SC_Metal",
+        "SC_Orange"
+      ],
+      "blender_min_xyz_m": [
+        -1.2,
+        -0.145,
+        -3.4
+      ],
+      "blender_max_xyz_m": [
+        1.2,
+        0.0,
+        3.4
+      ],
+      "unity_size_xyz_m": [
+        2.4,
+        6.8,
+        0.145
+      ],
+      "bytes": 97548,
+      "unity_min_xyz_m": [
+        -1.2,
+        -3.4,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.2,
+        3.4,
+        0.145
+      ]
+    },
+    {
+      "asset": "DistrictSignYunting",
+      "fbx": "Assets/Art/StackedCity/Models/DistrictSignYunting.fbx",
+      "mesh_renderers": 3,
+      "triangles": 2952,
+      "materials": [
+        "SC_Concrete",
+        "SC_Foliage",
+        "SC_Metal"
+      ],
+      "blender_min_xyz_m": [
+        -1.2,
+        -0.145,
+        -3.4
+      ],
+      "blender_max_xyz_m": [
+        1.2,
+        0.0,
+        3.4
+      ],
+      "unity_size_xyz_m": [
+        2.4,
+        6.8,
+        0.145
+      ],
+      "bytes": 91420,
+      "unity_min_xyz_m": [
+        -1.2,
+        -3.4,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.2,
+        3.4,
+        0.145
+      ]
+    },
+    {
+      "asset": "DistrictSignQinglan",
+      "fbx": "Assets/Art/StackedCity/Models/DistrictSignQinglan.fbx",
+      "mesh_renderers": 3,
+      "triangles": 3467,
+      "materials": [
+        "SC_Concrete",
+        "SC_Metal",
+        "SC_White"
+      ],
+      "blender_min_xyz_m": [
+        -1.2,
+        -0.145,
+        -3.4
+      ],
+      "blender_max_xyz_m": [
+        1.2,
+        0.0,
+        3.4
+      ],
+      "unity_size_xyz_m": [
+        2.4,
+        6.8,
+        0.145
+      ],
+      "bytes": 105228,
+      "unity_min_xyz_m": [
+        -1.2,
+        -3.4,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.2,
+        3.4,
+        0.145
+      ]
+    },
+    {
+      "asset": "DistrictSignZhexiang",
+      "fbx": "Assets/Art/StackedCity/Models/DistrictSignZhexiang.fbx",
+      "mesh_renderers": 3,
+      "triangles": 3628,
+      "materials": [
+        "SC_Concrete",
+        "SC_Metal",
+        "SC_Orange"
+      ],
+      "blender_min_xyz_m": [
+        -1.2,
+        -0.145,
+        -3.4
+      ],
+      "blender_max_xyz_m": [
+        1.2,
+        0.0,
+        3.4
+      ],
+      "unity_size_xyz_m": [
+        2.4,
+        6.8,
+        0.145
+      ],
+      "bytes": 106444,
+      "unity_min_xyz_m": [
+        -1.2,
+        -3.4,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.2,
+        3.4,
+        0.145
+      ]
+    },
+    {
+      "asset": "CityNoticeNoodle",
+      "fbx": "Assets/Art/StackedCity/Models/CityNoticeNoodle.fbx",
+      "mesh_renderers": 4,
+      "triangles": 2449,
+      "materials": [
+        "SC_Concrete",
+        "SC_Metal",
+        "SC_Orange",
+        "SC_White"
+      ],
+      "blender_min_xyz_m": [
+        -1.3,
+        -0.145,
+        -1.1
+      ],
+      "blender_max_xyz_m": [
+        1.3,
+        0.0,
+        1.1
+      ],
+      "unity_size_xyz_m": [
+        2.6,
+        2.2,
+        0.145
+      ],
+      "bytes": 84748,
+      "unity_min_xyz_m": [
+        -1.3,
+        -1.1,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.3,
+        1.1,
+        0.145
+      ]
+    },
+    {
+      "asset": "CityNoticeBookshop",
+      "fbx": "Assets/Art/StackedCity/Models/CityNoticeBookshop.fbx",
+      "mesh_renderers": 4,
+      "triangles": 2463,
+      "materials": [
+        "SC_Concrete",
+        "SC_Metal",
+        "SC_Orange",
+        "SC_White"
+      ],
+      "blender_min_xyz_m": [
+        -1.3,
+        -0.165,
+        -1.1
+      ],
+      "blender_max_xyz_m": [
+        1.3,
+        0.0,
+        1.1
+      ],
+      "unity_size_xyz_m": [
+        2.6,
+        2.2,
+        0.165
+      ],
+      "bytes": 83500,
+      "unity_min_xyz_m": [
+        -1.3,
+        -1.1,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.3,
+        1.1,
+        0.165
+      ]
+    },
+    {
+      "asset": "CityNoticeTailor",
+      "fbx": "Assets/Art/StackedCity/Models/CityNoticeTailor.fbx",
+      "mesh_renderers": 3,
+      "triangles": 2573,
+      "materials": [
+        "SC_Concrete",
+        "SC_Foliage",
+        "SC_Metal"
+      ],
+      "blender_min_xyz_m": [
+        -1.3,
+        -0.145,
+        -1.1
+      ],
+      "blender_max_xyz_m": [
+        1.3,
+        0.0,
+        1.1
+      ],
+      "unity_size_xyz_m": [
+        2.6,
+        2.2,
+        0.145
+      ],
+      "bytes": 84252,
+      "unity_min_xyz_m": [
+        -1.3,
+        -1.1,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.3,
+        1.1,
+        0.145
+      ]
+    },
+    {
+      "asset": "CityNoticePost",
+      "fbx": "Assets/Art/StackedCity/Models/CityNoticePost.fbx",
+      "mesh_renderers": 4,
+      "triangles": 2639,
+      "materials": [
+        "SC_Concrete",
+        "SC_Metal",
+        "SC_Orange",
+        "SC_White"
+      ],
+      "blender_min_xyz_m": [
+        -1.3,
+        -0.165,
+        -1.1
+      ],
+      "blender_max_xyz_m": [
+        1.3,
+        0.0,
+        1.1
+      ],
+      "unity_size_xyz_m": [
+        2.6,
+        2.2,
+        0.165
+      ],
+      "bytes": 87916,
+      "unity_min_xyz_m": [
+        -1.3,
+        -1.1,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.3,
+        1.1,
+        0.165
+      ]
+    },
+    {
+      "asset": "CityNoticeGarden",
+      "fbx": "Assets/Art/StackedCity/Models/CityNoticeGarden.fbx",
+      "mesh_renderers": 3,
+      "triangles": 2678,
+      "materials": [
+        "SC_Concrete",
+        "SC_Foliage",
+        "SC_Metal"
+      ],
+      "blender_min_xyz_m": [
+        -1.3,
+        -0.145,
+        -1.1
+      ],
+      "blender_max_xyz_m": [
+        1.3,
+        0.0,
+        1.1
+      ],
+      "unity_size_xyz_m": [
+        2.6,
+        2.2,
+        0.145
+      ],
+      "bytes": 86444,
+      "unity_min_xyz_m": [
+        -1.3,
+        -1.1,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.3,
+        1.1,
+        0.145
+      ]
+    },
+    {
+      "asset": "CityNoticeNightBus",
+      "fbx": "Assets/Art/StackedCity/Models/CityNoticeNightBus.fbx",
+      "mesh_renderers": 4,
+      "triangles": 2757,
+      "materials": [
+        "SC_Concrete",
+        "SC_Metal",
+        "SC_Orange",
+        "SC_White"
+      ],
+      "blender_min_xyz_m": [
+        -1.3,
+        -0.145,
+        -1.1
+      ],
+      "blender_max_xyz_m": [
+        1.3,
+        0.0,
+        1.1
+      ],
+      "unity_size_xyz_m": [
+        2.6,
+        2.2,
+        0.145
+      ],
+      "bytes": 92220,
+      "unity_min_xyz_m": [
+        -1.3,
+        -1.1,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.3,
+        1.1,
+        0.145
+      ]
+    },
+    {
+      "asset": "CityNoticeWind",
+      "fbx": "Assets/Art/StackedCity/Models/CityNoticeWind.fbx",
+      "mesh_renderers": 3,
+      "triangles": 2531,
+      "materials": [
+        "SC_Concrete",
+        "SC_Foliage",
+        "SC_Metal"
+      ],
+      "blender_min_xyz_m": [
+        -1.3,
+        -0.145,
+        -1.1
+      ],
+      "blender_max_xyz_m": [
+        1.3,
+        0.0,
+        1.1
+      ],
+      "unity_size_xyz_m": [
+        2.6,
+        2.2,
+        0.145
+      ],
+      "bytes": 82252,
+      "unity_min_xyz_m": [
+        -1.3,
+        -1.1,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.3,
+        1.1,
+        0.145
+      ]
+    },
+    {
+      "asset": "CityNoticeNeighbours",
+      "fbx": "Assets/Art/StackedCity/Models/CityNoticeNeighbours.fbx",
+      "mesh_renderers": 4,
+      "triangles": 2533,
+      "materials": [
+        "SC_Concrete",
+        "SC_Metal",
+        "SC_Orange",
+        "SC_White"
+      ],
+      "blender_min_xyz_m": [
+        -1.3,
+        -0.165,
+        -1.1
+      ],
+      "blender_max_xyz_m": [
+        1.3,
+        0.0,
+        1.1
+      ],
+      "unity_size_xyz_m": [
+        2.6,
+        2.2,
+        0.165
+      ],
+      "bytes": 84316,
+      "unity_min_xyz_m": [
+        -1.3,
+        -1.1,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.3,
+        1.1,
+        0.165
+      ]
+    },
+    {
+      "asset": "CityNoticeYesterday",
+      "fbx": "Assets/Art/StackedCity/Models/CityNoticeYesterday.fbx",
+      "mesh_renderers": 4,
+      "triangles": 2178,
+      "materials": [
+        "SC_Concrete",
+        "SC_Metal",
+        "SC_Orange",
+        "SC_White"
+      ],
+      "blender_min_xyz_m": [
+        -1.3,
+        -0.145,
+        -1.1
+      ],
+      "blender_max_xyz_m": [
+        1.3,
+        0.0,
+        1.1
+      ],
+      "unity_size_xyz_m": [
+        2.6,
+        2.2,
+        0.145
+      ],
+      "bytes": 76988,
+      "unity_min_xyz_m": [
+        -1.3,
+        -1.1,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.3,
+        1.1,
+        0.145
+      ]
+    },
+    {
+      "asset": "CityNoticeCat",
+      "fbx": "Assets/Art/StackedCity/Models/CityNoticeCat.fbx",
+      "mesh_renderers": 3,
+      "triangles": 2559,
+      "materials": [
+        "SC_Concrete",
+        "SC_Foliage",
+        "SC_Metal"
+      ],
+      "blender_min_xyz_m": [
+        -1.3,
+        -0.145,
+        -1.1
+      ],
+      "blender_max_xyz_m": [
+        1.3,
+        0.0,
+        1.1
+      ],
+      "unity_size_xyz_m": [
+        2.6,
+        2.2,
+        0.145
+      ],
+      "bytes": 83068,
+      "unity_min_xyz_m": [
+        -1.3,
+        -1.1,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.3,
+        1.1,
+        0.145
+      ]
+    },
+    {
+      "asset": "CityNoticeBreakfast",
+      "fbx": "Assets/Art/StackedCity/Models/CityNoticeBreakfast.fbx",
+      "mesh_renderers": 4,
+      "triangles": 2960,
+      "materials": [
+        "SC_Concrete",
+        "SC_Metal",
+        "SC_Orange",
+        "SC_White"
+      ],
+      "blender_min_xyz_m": [
+        -1.3,
+        -0.165,
+        -1.1
+      ],
+      "blender_max_xyz_m": [
+        1.3,
+        0.0,
+        1.1
+      ],
+      "unity_size_xyz_m": [
+        2.6,
+        2.2,
+        0.165
+      ],
+      "bytes": 96700,
+      "unity_min_xyz_m": [
+        -1.3,
+        -1.1,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.3,
+        1.1,
+        0.165
+      ]
+    },
+    {
+      "asset": "CityNoticeLostAndFound",
+      "fbx": "Assets/Art/StackedCity/Models/CityNoticeLostAndFound.fbx",
+      "mesh_renderers": 4,
+      "triangles": 2801,
+      "materials": [
+        "SC_Concrete",
+        "SC_Metal",
+        "SC_Orange",
+        "SC_White"
+      ],
+      "blender_min_xyz_m": [
+        -1.3,
+        -0.145,
+        -1.1
+      ],
+      "blender_max_xyz_m": [
+        1.3,
+        0.0,
+        1.1
+      ],
+      "unity_size_xyz_m": [
+        2.6,
+        2.2,
+        0.145
+      ],
+      "bytes": 94156,
+      "unity_min_xyz_m": [
+        -1.3,
+        -1.1,
+        -0.0
+      ],
+      "unity_max_xyz_m": [
+        1.3,
+        1.1,
+        0.145
+      ]
+    }
+  ],
+  "lettering": [
+    {
+      "asset": "DistrictSignXixia",
+      "text": "住宅街区",
+      "font": "SimHei Regular",
+      "height_m": 0.19
+    },
+    {
+      "asset": "DistrictSignXixia",
+      "text": "03",
+      "font": "EchoRun Sans SC Regular",
+      "height_m": 1.4893
+    },
+    {
+      "asset": "DistrictSignXixia",
+      "text": "栖霞里",
+      "font": "SimHei Regular",
+      "height_m": 0.58
+    },
+    {
+      "asset": "DistrictSignXixia",
+      "text": "住在风里",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    },
+    {
+      "asset": "DistrictSignXixia",
+      "text": "街区 03",
+      "font": "SimHei Regular",
+      "height_m": 0.24
+    },
+    {
+      "asset": "DistrictSignYunting",
+      "text": "公共街区",
+      "font": "SimHei Regular",
+      "height_m": 0.19
+    },
+    {
+      "asset": "DistrictSignYunting",
+      "text": "16",
+      "font": "EchoRun Sans SC Regular",
+      "height_m": 1.5273
+    },
+    {
+      "asset": "DistrictSignYunting",
+      "text": "云庭公社",
+      "font": "SimHei Regular",
+      "height_m": 0.4687
+    },
+    {
+      "asset": "DistrictSignYunting",
+      "text": "邻里共用",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    },
+    {
+      "asset": "DistrictSignYunting",
+      "text": "街区 16",
+      "font": "SimHei Regular",
+      "height_m": 0.24
+    },
+    {
+      "asset": "DistrictSignQinglan",
+      "text": "交通办公",
+      "font": "SimHei Regular",
+      "height_m": 0.19
+    },
+    {
+      "asset": "DistrictSignQinglan",
+      "text": "28",
+      "font": "EchoRun Sans SC Regular",
+      "height_m": 1.4602
+    },
+    {
+      "asset": "DistrictSignQinglan",
+      "text": "青岚枢纽",
+      "font": "SimHei Regular",
+      "height_m": 0.4676
+    },
+    {
+      "asset": "DistrictSignQinglan",
+      "text": "城市换乘",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    },
+    {
+      "asset": "DistrictSignQinglan",
+      "text": "街区 28",
+      "font": "SimHei Regular",
+      "height_m": 0.24
+    },
+    {
+      "asset": "DistrictSignZhexiang",
+      "text": "旧街生活",
+      "font": "SimHei Regular",
+      "height_m": 0.19
+    },
+    {
+      "asset": "DistrictSignZhexiang",
+      "text": "09",
+      "font": "EchoRun Sans SC Regular",
+      "height_m": 1.4863
+    },
+    {
+      "asset": "DistrictSignZhexiang",
+      "text": "折巷老街",
+      "font": "SimHei Regular",
+      "height_m": 0.4624
+    },
+    {
+      "asset": "DistrictSignZhexiang",
+      "text": "老街新日常",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    },
+    {
+      "asset": "DistrictSignZhexiang",
+      "text": "街区 09",
+      "font": "SimHei Regular",
+      "height_m": 0.24
+    },
+    {
+      "asset": "CityNoticeNoodle",
+      "text": "街坊小店",
+      "font": "SimHei Regular",
+      "height_m": 0.16
+    },
+    {
+      "asset": "CityNoticeNoodle",
+      "text": "晚风面馆",
+      "font": "SimHei Regular",
+      "height_m": 0.43
+    },
+    {
+      "asset": "CityNoticeNoodle",
+      "text": "热汤供应",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    },
+    {
+      "asset": "CityNoticeBookshop",
+      "text": "街坊小店",
+      "font": "SimHei Regular",
+      "height_m": 0.2
+    },
+    {
+      "asset": "CityNoticeBookshop",
+      "text": "云间书屋",
+      "font": "SimHei Regular",
+      "height_m": 0.43
+    },
+    {
+      "asset": "CityNoticeBookshop",
+      "text": "今日有新书",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    },
+    {
+      "asset": "CityNoticeTailor",
+      "text": "邻里手作",
+      "font": "SimHei Regular",
+      "height_m": 0.16
+    },
+    {
+      "asset": "CityNoticeTailor",
+      "text": "衣物修补",
+      "font": "SimHei Regular",
+      "height_m": 0.42
+    },
+    {
+      "asset": "CityNoticeTailor",
+      "text": "旧物有新用",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    },
+    {
+      "asset": "CityNoticePost",
+      "text": "邮政服务",
+      "font": "SimHei Regular",
+      "height_m": 0.2
+    },
+    {
+      "asset": "CityNoticePost",
+      "text": "层间邮局",
+      "font": "SimHei Regular",
+      "height_m": 0.43
+    },
+    {
+      "asset": "CityNoticePost",
+      "text": "信会准时到",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    },
+    {
+      "asset": "CityNoticeGarden",
+      "text": "共同照料",
+      "font": "SimHei Regular",
+      "height_m": 0.16
+    },
+    {
+      "asset": "CityNoticeGarden",
+      "text": "屋顶菜园",
+      "font": "SimHei Regular",
+      "height_m": 0.42
+    },
+    {
+      "asset": "CityNoticeGarden",
+      "text": "请留一片绿",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    },
+    {
+      "asset": "CityNoticeNightBus",
+      "text": "夜间服务",
+      "font": "SimHei Regular",
+      "height_m": 0.16
+    },
+    {
+      "asset": "CityNoticeNightBus",
+      "text": "夜班车站",
+      "font": "SimHei Regular",
+      "height_m": 0.43
+    },
+    {
+      "asset": "CityNoticeNightBus",
+      "text": "末班也等你",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    },
+    {
+      "asset": "CityNoticeWind",
+      "text": "生活提醒",
+      "font": "SimHei Regular",
+      "height_m": 0.16
+    },
+    {
+      "asset": "CityNoticeWind",
+      "text": "晒被之前",
+      "font": "SimHei Regular",
+      "height_m": 0.42
+    },
+    {
+      "asset": "CityNoticeWind",
+      "text": "请看风向",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    },
+    {
+      "asset": "CityNoticeNeighbours",
+      "text": "邻里之间",
+      "font": "SimHei Regular",
+      "height_m": 0.2
+    },
+    {
+      "asset": "CityNoticeNeighbours",
+      "text": "楼上楼下",
+      "font": "SimHei Regular",
+      "height_m": 0.43
+    },
+    {
+      "asset": "CityNoticeNeighbours",
+      "text": "都是邻居",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    },
+    {
+      "asset": "CityNoticeYesterday",
+      "text": "街角留言",
+      "font": "SimHei Regular",
+      "height_m": 0.16
+    },
+    {
+      "asset": "CityNoticeYesterday",
+      "text": "昨日走过",
+      "font": "SimHei Regular",
+      "height_m": 0.43
+    },
+    {
+      "asset": "CityNoticeYesterday",
+      "text": "今日相逢",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    },
+    {
+      "asset": "CityNoticeCat",
+      "text": "邻里提醒",
+      "font": "SimHei Regular",
+      "height_m": 0.16
+    },
+    {
+      "asset": "CityNoticeCat",
+      "text": "这层有猫",
+      "font": "SimHei Regular",
+      "height_m": 0.42
+    },
+    {
+      "asset": "CityNoticeCat",
+      "text": "小声经过",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    },
+    {
+      "asset": "CityNoticeBreakfast",
+      "text": "街坊小店",
+      "font": "SimHei Regular",
+      "height_m": 0.2
+    },
+    {
+      "asset": "CityNoticeBreakfast",
+      "text": "早安蒸铺",
+      "font": "SimHei Regular",
+      "height_m": 0.43
+    },
+    {
+      "asset": "CityNoticeBreakfast",
+      "text": "热气刚刚好",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    },
+    {
+      "asset": "CityNoticeLostAndFound",
+      "text": "邻里服务",
+      "font": "SimHei Regular",
+      "height_m": 0.16
+    },
+    {
+      "asset": "CityNoticeLostAndFound",
+      "text": "失物招领",
+      "font": "SimHei Regular",
+      "height_m": 0.43
+    },
+    {
+      "asset": "CityNoticeLostAndFound",
+      "text": "也收迷路的伞",
+      "font": "SimHei Regular",
+      "height_m": 0.29
+    }
+  ],
+  "font_provenance": {
+    "chinese": "Installed SimHei C:/Windows/Fonts/simhei.ttf, rendered mesh outlines only; no font file embedded",
+    "latin": "Existing project EchoRun Sans SC Regular (Noto Sans CJK SC 2.004 subset), SIL OFL 1.1; mesh outlines only"
+  },
+  "scope": "Original environmental shop and neighbourhood lettering. No gameplay arrows, lighting, colliders or runtime text."
+}

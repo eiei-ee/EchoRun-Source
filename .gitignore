@@ -1,0 +1,139 @@
+# Unity generated
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Tt]ext[Tt]ool[Dd]atas/
+*.log
+
+# Visual Studio generated
+*.csproj
+*.sln
+*.user
+.vs/
+.vscode/
+
+# Build output
+TempleRun/
+
+# Code extensions
+.codely-cli/
+.com-unity-codely.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Memory captures
+MemoryCaptures/
+
+# Local AI training exports
+TrainingData/
+
+# Local Codex diagnostics and test artifacts
+TempCodex*
+artifacts/
+.firecrawl/
+/*EditMode.xml
+/*PlayMode.xml
+/TestResults*.xml
+/TestResults/
+/LocalArchive/
+__pycache__/
+*.blend[0-9]
+
+# Local credentials and release signing material
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.mobileprovision
+*.provisionprofile
+key.properties
+google-services.json
+
+# Local WeChat cloud environment configuration (example is tracked separately)
+/Assets/Resources/Weixin/AsyncEchoCloudSettings.json
+/Assets/Resources/Weixin/AsyncEchoCloudSettings.json.meta
+
+# Distributable packages belong in GitHub Releases, not source control
+*.apk
+*.aab
+*.ipa
+# Free commercial-use motion evaluation assets. Their license does not allow
+# redistributing reusable source clips in this public repository.
+/ArtSource/AnimationReferences/KevinBasicPrivate/
+/Assets/Animations/HumanMotion/KevinBasicPrivate/
+/Assets/Animations/HumanMotion/KevinBasicPrivate.meta
+
+# Omitted reusable assets in the public source snapshot
+/ArtSource/Blender/LayeredMemory/MemoryCourier.blend
+/ArtSource/OrangeEcho/OrangeEchoOutfit.blend
+/Assets/Animations/HumanMotion/HumanFalling.fbx
+/Assets/Animations/HumanMotion/HumanFalling.fbx.meta
+/Assets/Animations/HumanMotion/HumanIdle.fbx
+/Assets/Animations/HumanMotion/HumanIdle.fbx.meta
+/Assets/Animations/HumanMotion/HumanRunForwards.fbx
+/Assets/Animations/HumanMotion/HumanRunForwards.fbx.meta
+/Assets/Animations/HumanMotion/RunnerAthletic/RunnerReadyIdle.anim
+/Assets/Animations/HumanMotion/RunnerAthletic/RunnerReadyIdle.anim.meta
+/Assets/Animations/HumanMotion/Visvise.meta
+/Assets/Animations/HumanMotion/Visvise/EchoRun_SlideLow_v1_TextMotion_TextMotion0.fbx
+/Assets/Animations/HumanMotion/Visvise/EchoRun_SlideLow_v1_TextMotion_TextMotion0.fbx.meta
+/Assets/Art/LayeredMemory/Models/MemoryCourier.fbx
+/Assets/Art/LayeredMemory/Models/MemoryCourier.fbx.meta
+/Assets/Art/OrangeEcho/Meshes/OE_HandArmorClean.asset
+/Assets/Art/OrangeEcho/Meshes/OE_HandArmorClean.asset.meta
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_EXO_Body.asset
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_EXO_Body.asset.meta
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_EXO_BrowsLashes.asset
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_EXO_BrowsLashes.asset.meta
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_EXO_Caruncula.asset
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_EXO_Caruncula.asset.meta
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_EXO_Eyes.asset
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_EXO_Eyes.asset.meta
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_EXO_EyesSpec.asset
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_EXO_EyesSpec.asset.meta
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_EXO_HeadMask.asset
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_EXO_HeadMask.asset.meta
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_EXO_Teeth.asset
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_EXO_Teeth.asset.meta
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_Exo_Suit.asset
+/Assets/Art/OrangeEcho/Meshes/OE_Preserved_Exo_Suit.asset.meta
+/Assets/Art/OrangeEcho/Models/OrangeEchoOutfit.fbx
+/Assets/Art/OrangeEcho/Models/OrangeEchoOutfit.fbx.meta
+/Assets/Models/Mixamo/ExoGray.meta
+/Assets/Models/Mixamo/ExoGray/ExoGray_TPose.fbx
+/Assets/Models/Mixamo/ExoGray/ExoGray_TPose.fbx.meta
+/Assets/Models/Mixamo/ExoGray/Materials.meta
+/Assets/Models/Mixamo/ExoGray/Materials/Body_MAT_BlueTech.mat
+/Assets/Models/Mixamo/ExoGray/Materials/Body_MAT_BlueTech.mat.meta
+/Assets/Models/Mixamo/ExoGray/Materials/Brows_MAT_BlueTech.mat
+/Assets/Models/Mixamo/ExoGray/Materials/Brows_MAT_BlueTech.mat.meta
+/Assets/Models/Mixamo/ExoGray/Materials/Exo_MAT_BlueTech.mat
+/Assets/Models/Mixamo/ExoGray/Materials/Exo_MAT_BlueTech.mat.meta
+/Assets/Models/Mixamo/ExoGray/Materials/Eye_MAT_BlueTech.mat
+/Assets/Models/Mixamo/ExoGray/Materials/Eye_MAT_BlueTech.mat.meta
+/Assets/Models/Mixamo/ExoGray/Materials/Eye_Spec_MAT_BlueTech.mat
+/Assets/Models/Mixamo/ExoGray/Materials/Eye_Spec_MAT_BlueTech.mat.meta
+/Assets/Models/Mixamo/ExoGray/Textures.meta
+/Assets/Models/Mixamo/ExoGray/Textures/BODY_diffuse.png
+/Assets/Models/Mixamo/ExoGray/Textures/BODY_diffuse.png.meta
+/Assets/Models/Mixamo/ExoGray/Textures/BODY_normal.png
+/Assets/Models/Mixamo/ExoGray/Textures/BODY_normal.png.meta
+/Assets/Models/Mixamo/ExoGray/Textures/BODY_specular.png
+/Assets/Models/Mixamo/ExoGray/Textures/BODY_specular.png.meta
+/Assets/Models/Mixamo/ExoGray/Textures/BROW_diffuse.png
+/Assets/Models/Mixamo/ExoGray/Textures/BROW_diffuse.png.meta
+/Assets/Models/Mixamo/ExoGray/Textures/EXO_diffuse.png
+/Assets/Models/Mixamo/ExoGray/Textures/EXO_diffuse.png.meta
+/Assets/Models/Mixamo/ExoGray/Textures/EXO_normal.png
+/Assets/Models/Mixamo/ExoGray/Textures/EXO_normal.png.meta
+/Assets/Models/Mixamo/ExoGray/Textures/EXO_specular.png
+/Assets/Models/Mixamo/ExoGray/Textures/EXO_specular.png.meta

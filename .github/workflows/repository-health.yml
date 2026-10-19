@@ -1,0 +1,97 @@
+name: Repository health
+
+on:
+  push:
+    branches: [master, 'codex/**']
+  pull_request:
+    branches: [master, 'codex/**']
+
+permissions:
+  contents: read
+
+jobs:
+  community-files:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Validate open-source repository files
+        shell: bash
+        run: |
+          set -euo pipefail
+          required=(
+            LICENSE
+            README.md
+            CONTRIBUTING.md
+            CODE_OF_CONDUCT.md
+            SECURITY.md
+            SUPPORT.md
+            MAINTAINERS.md
+            THIRD_PARTY_NOTICES.md
+            .github/CODEOWNERS
+            docs/ARCHITECTURE.md
+            docs/BUILDING.md
+            docs/ROADMAP.md
+            docs/RepositoryWorkflow.md
+            docs/RunnerMotionDependencies.md
+          )
+
+          for path in "${required[@]}"; do
+            test -s "$path" || {
+              echo "Required repository file is missing or empty: $path"
+              exit 1
+            }
+          done
+
+          grep -q "MIT License" LICENSE
+          grep -q "Noto Sans CJK SC" THIRD_PARTY_NOTICES.md
+
+          if git ls-files --error-unmatch Assets/Fonts/arial.ttf >/dev/null 2>&1; then
+            echo "Assets/Fonts/arial.ttf has unknown redistribution rights."
+            exit 1
+          fi
+
+          if git ls-files | grep -E '(^|/)(Library|Temp|Logs|Builds)/' >/dev/null; then
+            echo "Generated editor or build output is tracked."
+            exit 1
+          fi
+
+          if git ls-files | grep -E '(^|/)KevinBasicPrivate(/|\.meta$)' >/dev/null; then
+            echo "Private reusable motion source or generated clips are tracked."
+            exit 1
+          fi
+
+  cloud-tests:
+    name: Cloud function tests without credentials
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: Tools/CloudFunctions/echo
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm test
+
+  ci-scripts:
+    name: CI script checks without private assets
+    runs-on: windows-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Parse scripts and exercise restore safety with synthetic fixtures
+        shell: powershell
+        run: ./Tools/CI/Test-CIScripts.ps1

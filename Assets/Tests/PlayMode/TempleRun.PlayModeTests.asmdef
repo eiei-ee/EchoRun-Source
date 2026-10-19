@@ -1,0 +1,20 @@
+{
+  "name": "TempleRun.PlayModeTests",
+  "rootNamespace": "TempleRun.Tests",
+  "references": [
+    "TempleRun.Runtime",
+    "TempleRun.WeixinMiniGame"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

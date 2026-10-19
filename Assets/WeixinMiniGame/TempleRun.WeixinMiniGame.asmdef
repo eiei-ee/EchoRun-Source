@@ -1,0 +1,14 @@
+{
+  "name": "TempleRun.WeixinMiniGame",
+  "rootNamespace": "TempleRun",
+  "references": ["TempleRun.Runtime", "Wx"],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

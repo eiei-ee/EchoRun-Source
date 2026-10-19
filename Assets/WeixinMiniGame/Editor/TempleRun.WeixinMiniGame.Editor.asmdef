@@ -1,0 +1,6 @@
+{
+  "name": "TempleRun.WeixinMiniGame.Editor",
+  "references": ["TempleRun.Runtime", "TempleRun.WeixinMiniGame"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

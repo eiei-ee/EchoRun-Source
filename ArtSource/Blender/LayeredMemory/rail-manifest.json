@@ -1,0 +1,57 @@
+[
+  {
+    "asset": "LayeredArchViaduct",
+    "fbx": "Assets/Art/LayeredMemory/Models/LayeredArchViaduct.fbx",
+    "mesh_renderers": 4,
+    "triangles": 1992,
+    "materials": [
+      "LM_Ink",
+      "LM_Mineral",
+      "LM_Stone",
+      "LM_Window"
+    ],
+    "blender_min_xyz_m": [
+      -3.67,
+      -12.0,
+      -4.35
+    ],
+    "blender_max_xyz_m": [
+      3.67,
+      12.0,
+      1.335
+    ],
+    "unity_size_xyz_m": [
+      7.34,
+      5.685,
+      24.0
+    ],
+    "bytes": 65500
+  },
+  {
+    "asset": "LayeredRailCurve",
+    "fbx": "Assets/Art/LayeredMemory/Models/LayeredRailCurve.fbx",
+    "mesh_renderers": 3,
+    "triangles": 192,
+    "materials": [
+      "LM_Ink",
+      "LM_Mineral",
+      "LM_Stone"
+    ],
+    "blender_min_xyz_m": [
+      -3.5,
+      -0.5,
+      -1.45
+    ],
+    "blender_max_xyz_m": [
+      3.5,
+      0.5,
+      1.075
+    ],
+    "unity_size_xyz_m": [
+      7.0,
+      2.525,
+      1.0
+    ],
+    "bytes": 28540
+  }
+]

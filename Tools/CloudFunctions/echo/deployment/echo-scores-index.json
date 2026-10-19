@@ -1,0 +1,17 @@
+{
+  "CreateIndexes": [
+    {
+      "IndexName": "echo_board_ranking_v1",
+      "MgoKeySchema": {
+        "MgoIsUnique": false,
+        "MgoIndexKeys": [
+          { "Name": "boardId", "Direction": "1" },
+          { "Name": "distanceMeters", "Direction": "-1" },
+          { "Name": "playerLeadMeters", "Direction": "-1" },
+          { "Name": "achievedAt", "Direction": "1" },
+          { "Name": "_id", "Direction": "1" }
+        ]
+      }
+    }
+  ]
+}
